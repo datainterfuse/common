@@ -1,10 +1,14 @@
 package com.di.common.model;
 
 import java.io.Serializable;
-import java.security.Timestamp;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -20,7 +24,8 @@ public class Person implements Serializable {
 	private String sex;
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id", nullable = false)
 	public Integer getId() {
 		return id;
 	}
